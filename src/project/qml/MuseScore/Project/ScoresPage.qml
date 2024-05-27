@@ -21,6 +21,7 @@
  */
 import QtQuick 2.15
 import QtQuick.Layouts 1.3
+import QtQuick.Window 2.15
 
 import Muse.Ui 1.0
 import Muse.UiComponents 1.0
@@ -369,6 +370,14 @@ FocusScope {
                     scoresPageModel.openOther()
                 }
             }
+        }
+    }
+
+    // Add the shortcut for Find (Ctrl+F)
+    Shortcut {
+        sequence: StandardKey.Find
+        onActivated: {
+            searchField.forceActiveFocus()
         }
     }
 }
